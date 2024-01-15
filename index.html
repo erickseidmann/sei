@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seidmann Reg</title>
+    <meta name="description" content="pagina de registro de aulas">
+    <meta name="author" content="Erick Seidmann">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <!--start of the tag header-->
+    <header>
+        <!-- aqui vai ficar a imagem-->
+        <img src="styles/image/navbar.png" alt="tres logos juntos">
+    </header>
+    <!--the end of the tag header-->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Class Records</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Trainings</a></li>
+            <li><a href="#">Books</a></li>
+        </ul>  
+    </nav>
+    <!--the start of the tag main-->
+    <main>
+        <h2>New Class Registrations</h2>
+
+        <div class="button group" id="button-group"> <!-- div do botao de grupo-->
+            <button>Group Classes</button>
+        </div><!-- fim do botao de aula em grupo-->
+
+        
+        <div class="button private" id="button-private"><!-- div do botao de aula particular-->
+            <button>Private Classes</button>
+        </div><!--fim do bot'ao de aula particular -->
+
+        <section class="grup" id="group"><!--aqui começa o formulario para a aula em grupo-->
+
+            <form id ="grup" action="processar registros " method="post"><!-- aqui começa o form do group classes-->
+
+                <div id="info-aluno"><!--div info-aluno-->
+                    <h3 >Informaçoes dos alunos / Student information </h3>
+                    <div class="name one"><!--Div nome do aluno-->
+                      <label for="name">Nome / Name:</label>
+                      <input type="text" id="name" />
+                    </div><!-- FIM Div nome do aluno-->
+
+                    <div class="email one"><!--Div email do aluno-->
+                      <label for="mail">E-mail:</label>
+                      <input type="email" id="mail" />
+                    </div><!--fim Div email do aluno-->
+
+                    <div><!--Div info info-status -->
+                        <label for="info-status">Status</label>
+                        <select name="info-status" id="info-status" class="form-select bg-light">
+                            <option selected></option>
+                            <option value="compareceu">Compareceu / showed up</option>
+                            <option value="nao-compareceu">Não compareceu /  Didn't attend</option>
+                            <option value="cancelou">Cancelou / Canceled</option>
+                            <option value="demonstrativa">Demonstrativa / Demonstrative</option>
+                        </select>
+                    </div><!--Div info info-status-->
+                </div><!--FIM div info-aluno-->
+
+                <div id="info-aula"><!--DIV INFO-AULA-->
+                    <h3 >Informaçoes sobre a aula/ Class information </h3>
+                    <div><!--Div tipo de aula -->
+                        <label for="tipo-aula">Tipo de aula / Type of class</label>
+                        <select name="tipo-aula" id="tipo-aula" class="form-select bg-light">
+                            <option selected></option>
+                            <option value="compareceu">Compareceu / showed up</option>
+                            <option value="nao-compareceu">Não compareceu /  Didn't attend</option>
+                            <option value="cancelou">Cancelou / Canceled</option>
+                            <option value="demonstrativa">Demonstrativa / Demonstrative</option>
+                        </select>
+                    </div><!--Div info da aula -->
+                    
+                </div>
+
+                <div>
+                  <label for="msg">Mensagem:</label>
+                  <textarea id="msg"></textarea>
+                </div>
+
+                <div class="button">
+                  <button type="submit">Enviar sua mensagem</button>
+                </div>
+              </form><!-- aqui termina o form do Group classes-->
+            
+        </section><!--aqui termina o formulario para aula em grupo-->
+
+        
+        <section class="private" id="private"><!--aqui começa o formulario para a aulas particulares-->
+            
+        </section><!--aqui termina o formulario para aulas particulares-->
+
+
+
+    </main>   
+    <!--the end of the tag main-->
+    <!-- the start of the tag footer-->
+    <footer>
+    </footer>
+     <!-- the end of the tag footer-->
+</body>
+</html>
