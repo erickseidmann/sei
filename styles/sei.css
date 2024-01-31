@@ -1,9 +1,90 @@
-/* Reset some default styles to ensure consistency */
-body {
+/*reseter os estilos*/
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
-header {
-    padding: 60px;
-  }
+body {
+    font-family: 'Roboto', sans-serif; 
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+/*estilizando a imagem do header*/
+
+header img{
+    width: 100%;
+}
+/*Nav bar estilizado*/
+nav ul{
+    list-style: none;
+    background-color: rgb(255, 112, 9);
+}
+nav ul li{
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+nav ul li:hover{
+    background-color: rgb(254, 171, 5);
+    cursor: pointer;
+}
+nav a {
+    padding: 10px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+/*hamburguer*/
+
+#menu {
+	font-size: 1.5rem;
+	border: 1px solid rgba(0,0,0,.3);
+	padding: 3px 7px 6px;
+	background-color: #fb9b01;
+	color: #000;
+ 	position: absolute ;
+	top: 3rem;
+	right: 20rem;
+}
+
+
+#menu::before {
+	content: "☰";
+}
+
+#menu.open::before {
+	content: "X";
+}
+
+
+.navigation li {
+	display: none;
+}
+.navigation li a {
+	display: block;
+	padding: 1rem;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+}
+.navigation li a:hover {
+	background-color: rgb(254, 171, 5);
+	color: #333;
+	font-weight: 700;
+}
+
+/* when the button is clicked - the open class is toggle (added/removed) and accounted for here */
+.open li {
+	display: block;
+	width: 100%;
+}
+.open li a {
+	display: block;
+}
+
+
+
+
