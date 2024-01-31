@@ -9,12 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles/sei.css">
 </head>
 <body>
     <!--start of the tag header-->
     <header>
         <!-- aqui vai ficar a imagem-->
-        <img src="styles/image/navbar.png" alt="tres logos juntos">
+        <img src="styles/image/nav6.png" alt="tres logos juntos">
     </header>
     <!--the end of the tag header-->
     <nav>
@@ -44,27 +45,27 @@
 
             <h2>Grupo / Group </h2>
 
-            <form id ="group" action="processar registros " method="post"><!-- aqui começa o form do group classes-->
+            <form id ="form-group" action="processar-registros.php" method="post"><!-- aqui começa o form do -group classes-->
 
-                <div id="info-aluno"><!--div info-aluno-->
+                <div ><!--div info-aluno-->
 
                     <h3 >Informaçoes dos alunos / Student information </h3>
 
-                    <div id="aluno-um"><!--aluno um -->
-                    <div class="name one"><!--Div nome do aluno-->
-                      <label for="name">Nome / Name:</label>
-                      <input type="text" id="name" />
+                    <div ><!--aluno um -->
+                    <div class="name-one"><!--Div nome do aluno-->
+                      <label for="name-one">Nome / Name:</label>
+                      <input type="text" id="nameum" />
                     </div><!-- FIM Div nome do aluno-->
 
-                    <div class="email one"><!--Div email do aluno-->
-                      <label for="mail">E-mail:</label>
-                      <input type="email" id="mail" />
+                    <div class="email-one"><!--Div email do aluno-->
+                      <label for="email-one">E-mail:</label>
+                      <input type="email" id="mailum" />
                     </div><!--fim Div email do aluno-->
 
                     <div><!--Div info info-status -->
                         <label for="info-status">Status</label>
-                        <select name="info-status" id="info-status" class="form-select bg-light">
-                            <option selected></option>
+                        <select name="info-status" id="info-status-um" class="form-select bg-light">
+                            <option selected>Selecione...</option>
                             <option value="compareceu">Compareceu / showed up</option>
                             <option value="nao-compareceu">Não compareceu /  Didn't attend</option>
                             <option value="cancelou">Cancelou / Canceled</option>
@@ -74,21 +75,21 @@
                     </div><!--fim aluno um-->
 
 
-                    <div id="aluno-dois"><!--aluno dois -->
+                    <div ><!--aluno dois -->
                         <div class="name one"><!--Div nome do aluno-->
-                          <label for="name">Nome / Name:</label>
-                          <input type="text" id="name" />
+                          <label for="name-dois">Nome / Name:</label>
+                          <input type="text" id="namedois" />
                         </div><!-- FIM Div nome do aluno-->
     
                         <div class="email one"><!--Div email do aluno-->
-                          <label for="mail">E-mail:</label>
-                          <input type="email" id="mail" />
+                          <label for="mail-dois">E-mail:</label>
+                          <input type="email" id="maildois" />
                         </div><!--fim Div email do aluno-->
     
                         <div><!--Div info info-status -->
                             <label for="info-status">Status</label>
-                            <select name="info-status" id="info-status" class="form-select bg-light">
-                                <option selected></option>
+                            <select name="info-status" id="info-status-dois" class="form-select bg-light">
+                                <option selected>Selecione...</option>
                                 <option value="compareceu">Compareceu / showed up</option>
                                 <option value="nao-compareceu">Não compareceu /  Didn't attend</option>
                                 <option value="cancelou">Cancelou / Canceled</option>
@@ -98,21 +99,21 @@
                         </div><!--fim aluno dois-->
 
                         
-                    <div id="aluno-tres"><!--aluno tres -->
+                    <div ><!--aluno tres -->
                         <div class="name one"><!--Div nome do aluno-->
-                          <label for="name">Nome / Name:</label>
-                          <input type="text" id="name" />
+                          <label for="name-tres">Nome / Name:</label>
+                          <input type="text" id="nametres" />
                         </div><!-- FIM Div nome do aluno-->
     
                         <div class="email one"><!--Div email do aluno-->
-                          <label for="mail">E-mail:</label>
-                          <input type="email" id="mail" />
+                          <label for="mail-tres">E-mail:</label>
+                          <input type="email" id="mailtres" />
                         </div><!--fim Div email do aluno-->
     
                         <div><!--Div info info-status -->
                             <label for="info-status">Status</label>
-                            <select name="info-status" id="info-status" class="form-select bg-light">
-                                <option selected></option>
+                            <select name="info-status" id="info-status-tres" class="form-select bg-light">
+                                <option selected>Selecione...</option>
                                 <option value="compareceu">Compareceu / showed up</option>
                                 <option value="nao-compareceu">Não compareceu /  Didn't attend</option>
                                 <option value="cancelou">Cancelou / Canceled</option>
@@ -122,21 +123,21 @@
                         </div><!--fim aluno tres-->
 
                         
-                    <div id="aluno-quatro"><!--aluno quatro -->
+                    <div ><!--aluno quatro -->
                         <div class="name one"><!--Div nome do aluno-->
-                          <label for="name">Nome / Name:</label>
-                          <input type="text" id="name" />
+                          <label for="name-quatro">Nome / Name:</label>
+                          <input type="text" id="namequatro" />
                         </div><!-- FIM Div nome do aluno-->
     
                         <div class="email one"><!--Div email do aluno-->
-                          <label for="mail">E-mail:</label>
-                          <input type="email" id="mail" />
+                          <label for="mail-quatro">E-mail:</label>
+                          <input type="email" id="mailquatro" />
                         </div><!--fim Div email do aluno-->
     
                         <div><!--Div info info-status -->
                             <label for="info-status">Status</label>
-                            <select name="info-status" id="info-status" class="form-select bg-light">
-                                <option selected></option>
+                            <select name="info-status" id="info-status-quatro" class="form-select bg-light">
+                                <option selected>Selecione...</option>
                                 <option value="compareceu">Compareceu / showed up</option>
                                 <option value="nao-compareceu">Não compareceu /  Didn't attend</option>
                                 <option value="cancelou">Cancelou / Canceled</option>
@@ -145,21 +146,21 @@
                         </div><!--Div info info-status-->
                         </div><!--fim aluno quatro-->
 
-                        <div id="aluno-cinco"><!--aluno cinco -->
+                        <div ><!--aluno cinco -->
                             <div class="name one"><!--Div nome do aluno-->
-                              <label for="name">Nome / Name:</label>
-                              <input type="text" id="name" />
+                              <label for="name-cinco">Nome / Name:</label>
+                              <input type="text" id="namecinco" />
                             </div><!-- FIM Div nome do aluno-->
         
                             <div class="email one"><!--Div email do aluno-->
-                              <label for="mail">E-mail:</label>
-                              <input type="email" id="mail" />
+                              <label for="mail-cinco">E-mail:</label>
+                              <input type="email" id="mailcinco" />
                             </div><!--fim Div email do aluno-->
         
                             <div><!--Div info info-status -->
                                 <label for="info-status">Status</label>
-                                <select name="info-status" id="info-status" class="form-select bg-light">
-                                    <option selected></option>
+                                <select name="info-status" id="info-status-cinco" class="form-select bg-light">
+                                    <option selected>Selecione...</option>
                                     <option value="compareceu">Compareceu / showed up</option>
                                     <option value="nao-compareceu">Não compareceu /  Didn't attend</option>
                                     <option value="cancelou">Cancelou / Canceled</option>
@@ -170,20 +171,20 @@
 
                 </div><!--FIM div info-aluno-->
 
-                <div id="info-aula"><!--DIV INFO-AULA-->
+                <div ><!--DIV INFO-AULA-->
 
                     <h3 >Informaçoes sobre a aula/ Class information </h3>
                     
                     <div class="teacher"><!--Div nome do aluno-->
                         <label for="teacher">Professor(a) / Teacher:</label>
-                        <input type="text" id="teacher" />
+                        <input type="text" id="teacher-group" />
                     </div><!-- FIM Div nome do aluno-->
 
 
-                    <div id="tempo-aula" class="tempo-aula"><!--Div tempo de aula  -->
+                    <div class="tempo-aula"><!--Div tempo de aula  -->
                         <label for="tempo-aula">Tempo da aula / Class time</label>
-                        <select name="tempo-aula" id="tempo-aula" class="form-select bg-light">
-                            <option selected></option>
+                        <select name="tempo-aula" id="tempo-group" class="form-select bg-light">
+                            <option selected>Selecione...</option>
                             <option value="30min">00:30 min</option>
                             <option value="45min">00:45 min</option>
                             <option value="60min">1:00 hr</option>
@@ -192,10 +193,10 @@
                         </select>
                     </div><!-- FIM Div tempo de aula-->
 
-                    <div class="tipo-curso" id="tipo-curso"><!--Div curso  -->
+                    <div class="tipo-curso" ><!--Div curso  -->
                         <label for="tipo-curso">Curso / Course</label>
-                        <select name="tipo-curso" id="tipo-curso" class="form-select bg-light">
-                            <option selected></option>
+                        <select name="tipo-curso" id="tipo-group" class="form-select bg-light">
+                            <option selected>Selecione...</option>
                             <option value="ingles">Inglês / English</option>
                             <option value="espanhol">Espanhol / Spanish</option>
                             <option value="programacao">Programação / Programming</option>
@@ -203,10 +204,10 @@
                     </div><!-- FIM Div curso-->
 
 
-                    <div class="tipo-aula" id="tipo-aula"><!--Div tipo-aula  -->
+                    <div class="tipo-aula" ><!--Div tipo-aula  -->
                         <label for="tipo-aula">Aula / Class</label>
-                        <select name="tipo-aula" id="tipo-aula" class="form-select bg-light">
-                            <option selected></option>
+                        <select name="tipo-aula" id="aula-group" class="form-select bg-light">
+                            <option selected>Selecione...</option>
                             <option value="book">Book / talk </option>
                             <option value="free">Free talk</option>
                             <option value="review">Subject Review</option>
@@ -214,46 +215,46 @@
                     </div><!-- FIM Div tipo-aula-->
 
 
-                    <div id="page" class="page"><!--Div pagina-->
+                    <div  class="page"><!--Div pagina-->
                         <label for="page">Ultima Pagina / Last page:</label>
-                        <input type="number" id="page" />
+                        <input type="number" id="page-group" />
                     </div><!-- FIM Div pagina-->
 
-                    <div id="atividade" class="atividade"><!--Div atividade-->
+                    <div class="atividade"><!--Div atividade-->
                         <label for="atividade">Ultima Atividade / Last activity:</label>
-                        <input type="text" id="page" />
+                        <input type="text" id="page-group-number" />
                     </div><!-- FIM Div atividade-->
 
-                    <div id="homework" class="homework"><!--Div atividade-->
+                    <div  class="homework"><!--Div atividade-->
                         <label for="homework">Homework:</label>
-                        <input type="text" id="Homework" />
+                        <input type="text" id="Homework-group" />
                     </div><!-- FIM Div atividade-->
 
-                    <div id="free-talk" class="free-talk"><!--Div free talk-->
+                    <div  class="free-talk"><!--Div free talk-->
                         <label for="free-talk">Assunto do Free Talk / Free Talk subject:</label>
-                        <input type="text" id="free-talk" />
+                        <input type="text" id="free-group" />
                     </div><!-- FIM Div free talk-->
 
-                    <div id="free-talk-link" class="free-talk-link"><!--Div free talk link-->
+                    <div  class="free-talk-link"><!--Div free talk link-->
                         <label for="free-talk-link">Free Talk link / Free Talk link:</label>
-                        <input type="text" id="free-talk-link" />
+                        <input type="text" id="link-group" />
                     </div><!-- FIM Div free talk link-->
 
-                    <div id="obs"><!--Div  obs-->
-                        <label for="msg">OBS sobre a aula / NOTE about the class:</label>
-                        <textarea id="msg"></textarea>
+                    <div ><!--Div  obs-->
+                        <label for="obs">OBS sobre a aula / NOTE about the class:</label>
+                        <textarea id="obs-group"></textarea>
                     </div><!--FIM Div  obs-->
                     
-                    <div id="INFO"><!--Div  INFO PARENTS-->
-                        <label for="msg">INFO PARENTS / INFO PARA OS PAIS:</label>
-                        <textarea id="msg"></textarea>
+                    <div ><!--Div  INFO PARENTS-->
+                        <label for="info">INFO PARENTS / INFO PARA OS PAIS:</label>
+                        <textarea id="info-group"></textarea>
                     </div><!--FIM INFO PARENTS-->
                 
                 </div> <!--FIM DIV INFO-AULA-->
 
                 <div>
                   <label for="msg">Mensagem:</label>
-                  <textarea id="msg"></textarea>
+                  <textarea id="msg-group"></textarea>
                 </div>
 
                 <div class="button">
@@ -268,24 +269,24 @@
 
             <h2>Particular / Private </h2>
 
-            <form id ="private" action="processar registros " method="post"><!-- aqui começa o form private classes-->
+            <form id ="form-private" action="processar-registros.php" method="post"><!-- aqui começa o form private classes-->
 
-                <div id="info-aluno"><!--div info-aluno-->
+                <div ><!--div info-aluno-->
                     <h3 >Informaçoes dos alunos / Student information </h3>
-                    <div class="name one"><!--Div nome do aluno-->
+                    <div class="name"><!--Div nome do aluno-->
                       <label for="name">Nome / Name:</label>
-                      <input type="text" id="name" />
+                      <input type="text" id="name-private" />
                     </div><!-- FIM Div nome do aluno-->
 
-                    <div class="email one"><!--Div email do aluno-->
+                    <div class="email-private"><!--Div email do aluno-->
                       <label for="mail">E-mail:</label>
-                      <input type="email" id="mail" />
+                      <input type="email" id="mail-private" />
                     </div><!--fim Div email do aluno-->
 
                     <div><!--Div info info-status -->
                         <label for="info-status">Status</label>
                         <select name="info-status" id="info-status" class="form-select bg-light">
-                            <option selected></option>
+                            <option selected>Selecione...</option>
                             <option value="compareceu">Compareceu / showed up</option>
                             <option value="nao-compareceu">Não compareceu /  Didn't attend</option>
                             <option value="cancelou">Cancelou / Canceled</option>
@@ -295,20 +296,20 @@
 
                 </div><!--FIM div info-aluno-->
 
-                <div id="info-aula"><!--DIV INFO-AULA-->
+                <div ><!--DIV INFO-AULA-->
 
                     <h3 >Informaçoes sobre a aula/ Class information </h3>
                     
                     <div class="teacher"><!--Div nome do aluno-->
                         <label for="teacher">Professor(a) / Teacher:</label>
-                        <input type="text" id="teacher" />
+                        <input type="text" id="teacher-private" />
                     </div><!-- FIM Div nome do aluno-->
 
 
-                    <div id="tempo-aula" class="tempo-aula"><!--Div tempo de aula  -->
+                    <div  class="tempo-aula"><!--Div tempo de aula  -->
                         <label for="tempo-aula">Tempo da aula / Class time</label>
                         <select name="tempo-aula" id="tempo-aula" class="form-select bg-light">
-                            <option selected></option>
+                            <option selected>Selecione...</option>
                             <option value="30min">00:30 min</option>
                             <option value="45min">00:45 min</option>
                             <option value="60min">1:00 hr</option>
@@ -317,10 +318,10 @@
                         </select>
                     </div><!-- FIM Div tempo de aula-->
 
-                    <div class="tipo-curso" id="tipo-curso"><!--Div curso  -->
+                    <div class="tipo-curso" ><!--Div curso  -->
                         <label for="tipo-curso">Curso / Course</label>
                         <select name="tipo-curso" id="tipo-curso" class="form-select bg-light">
-                            <option selected></option>
+                            <option selected>Selecione...</option>
                             <option value="ingles">Inglês / English</option>
                             <option value="espanhol">Espanhol / Spanish</option>
                             <option value="programacao">Programação / Programming</option>
@@ -328,10 +329,10 @@
                     </div><!-- FIM Div curso-->
 
 
-                    <div class="tipo-aula" id="tipo-aula"><!--Div tipo-aula  -->
+                    <div class="tipo-aula" ><!--Div tipo-aula  -->
                         <label for="tipo-aula">Aula / Class</label>
                         <select name="tipo-aula" id="tipo-aula" class="form-select bg-light">
-                            <option selected></option>
+                            <option selected>Selecione...</option>
                             <option value="book">Book / talk </option>
                             <option value="free">Free talk</option>
                             <option value="review">Subject Review</option>
@@ -339,39 +340,39 @@
                     </div><!-- FIM Div tipo-aula-->
 
 
-                    <div id="page" class="page"><!--Div pagina-->
+                    <div  class="page"><!--Div pagina-->
                         <label for="page">Ultima Pagina / Last page:</label>
                         <input type="number" id="page" />
                     </div><!-- FIM Div pagina-->
 
-                    <div id="atividade" class="atividade"><!--Div atividade-->
+                    <div  class="atividade"><!--Div atividade-->
                         <label for="atividade">Ultima Atividade / Last activity:</label>
-                        <input type="text" id="page" />
+                        <input type="text" id="atividade" />
                     </div><!-- FIM Div atividade-->
 
-                    <div id="homework" class="homework"><!--Div atividade-->
+                    <div class="homework"><!--Div atividade-->
                         <label for="homework">Homework:</label>
-                        <input type="text" id="Homework" />
+                        <input type="text" id="homework" />
                     </div><!-- FIM Div atividade-->
 
-                    <div id="free-talk" class="free-talk"><!--Div free talk-->
+                    <div  class="free-talk"><!--Div free talk-->
                         <label for="free-talk">Assunto do Free Talk / Free Talk subject:</label>
-                        <input type="text" id="free-talk" />
+                        <input type="text" id="free" />
                     </div><!-- FIM Div free talk-->
 
-                    <div id="free-talk-link" class="free-talk-link"><!--Div free talk link-->
+                    <div class="free-talk-link"><!--Div free talk link-->
                         <label for="free-talk-link">Free Talk link / Free Talk link:</label>
-                        <input type="text" id="free-talk-link" />
+                        <input type="text" id="free-link" />
                     </div><!-- FIM Div free talk link-->
 
-                    <div id="obs"><!--Div  obs-->
-                        <label for="msg">OBS sobre a aula / NOTE about the class:</label>
-                        <textarea id="msg"></textarea>
+                    <div ><!--Div  obs-->
+                        <label for="obs">OBS sobre a aula / NOTE about the class:</label>
+                        <textarea id="obs"></textarea>
                     </div><!--FIM Div  obs-->
                     
-                    <div id="INFO"><!--Div  INFO PARENTS-->
-                        <label for="msg">INFO PARENTS / INFO PARA OS PAIS:</label>
-                        <textarea id="msg"></textarea>
+                    <div ><!--Div  INFO PARENTS-->
+                        <label for="obs">INFO PARENTS / INFO PARA OS PAIS:</label>
+                        <textarea id="info"></textarea>
                     </div><!--FIM INFO PARENTS-->
                 
                 </div> <!--FIM DIV INFO-AULA-->

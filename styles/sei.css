@@ -1,0 +1,9 @@
+/* Reset some default styles to ensure consistency */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 60px;
+  }
