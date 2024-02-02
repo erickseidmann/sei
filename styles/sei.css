@@ -27,7 +27,7 @@ nav ul li{
     transition: background-color 0.3s;
 }
 nav ul li:hover{
-    background-color: rgb(254, 171, 5);
+    background-color: rgb(255, 192, 144);
     cursor: pointer;
 }
 nav a {
@@ -43,9 +43,9 @@ nav a {
 	font-size: 1.5rem;
 	border: 1px solid rgba(0,0,0,.3);
 	padding: 3px 7px 6px;
-	background-color: #fb9b01;
+	background-color:  rgb(255, 192, 144);
 	color: #000;
- 	position: absolute ;
+ 	position: block ;
 	top: 3rem;
 	right: 20rem;
 }
@@ -71,12 +71,10 @@ nav a {
 	color: #fff;
 }
 .navigation li a:hover {
-	background-color: rgb(254, 171, 5);
+	background-color:  rgb(255, 192, 144);
 	color: #333;
 	font-weight: 700;
 }
-
-/* when the button is clicked - the open class is toggle (added/removed) and accounted for here */
 .open li {
 	display: block;
 	width: 100%;
@@ -86,5 +84,80 @@ nav a {
 }
 
 
+/*titulo new class registrations*/
+main h2{
+	display: block ;
+	text-align: center;
+}
+
+main button{
+	padding: 3px 50px 6px;
+	background-color: rgb(255, 112, 9);
+	color:  rgb(0, 0, 0);
+
+		
+}
+
+.button-group{
+	margin-top: 2%;
+}
+
+#group {
+    display: none;
+}
+
+#private{
+	display: none;
+}
+
+main {
+	margin-left: 5%;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+}
+
+/* Estilize os elementos do formulário conforme necessário */
+form {
+	
+    width: 80%; /* Defina a largura do formulário conforme desejado */
+    max-width: 600px; /* Defina a largura máxima do formulário */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+	
+	display: flex;
+    flex-direction: column; /* Alinhe os elementos verticalmente */
+    justify-content: center; /* Centralize verticalmente */
+    align-items: center; /* Centralize horizontalmente */
+}
 
 
+form label {
+    margin-bottom: 10px;
+}
+
+form input, 
+form select, 
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}

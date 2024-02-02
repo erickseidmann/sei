@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="styles/sei.css">
+    <link rel="stylesheet" href="styles/large.css">
 </head>
 <body>
     <!--start of the tag header-->
@@ -33,12 +34,12 @@
     <main>
         <h2>New Class Registrations</h2>
 
-        <div class="button group" id="button-group"> <!-- div do botao de grupo-->
+        <div class="button-group" id="button-group"> <!-- div do botao de grupo-->
             <button>Group Classes</button>
         </div><!-- fim do botao de aula em grupo-->
 
         
-        <div class="button private" id="button-private"><!-- div do botao de aula particular-->
+        <div class="button-private" id="button-private"><!-- div do botao de aula particular-->
             <button>Private Classes</button>
         </div><!--fim do bot'ao de aula particular -->
 

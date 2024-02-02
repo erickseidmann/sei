@@ -1,0 +1,54 @@
+
+
+
+@media (min-width: 1209px) and (min-height: 200px) {
+
+     header img{
+        width: 100%;
+        height: 200px;
+    }
+    
+    header {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+    }
+
+ /* NAV bar STYLE */   
+    nav ul {
+        display: flex;  
+        justify-content: center; 
+        list-style: none;
+        padding: 10px 0;
+    }
+
+/*main*/
+
+    #menu {
+		display: none; /* hide hamburger button */
+	}
+
+	.navigation {
+		flex-direction: row;
+	}
+
+	.navigation li {
+		display: block;
+		flex: 1 1 100%;
+	}
+	
+	.stuff {
+		margin: 1rem auto;
+	}
+
+    main h2{
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    form{
+        margin-left: 25%;
+    }
+    
+    
+}
