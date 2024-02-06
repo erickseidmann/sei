@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="styles/sei.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/registrar.css">
+    <link rel="stylesheet" href="styles/registrar-large.css">
 </head>
 <body>
     <!--start of the tag header-->
@@ -55,14 +55,46 @@
 
                     <div ><!--aluno um -->
                     <div class="name-one"><!--Div nome do aluno-->
-                      <label for="name-one">Nome / Name:</label>
-                      <input type="text" id="nameum" />
+                    <select name="aluno" id="aluno" class="form-select bg-light" onchange="buscarEmail(0)" required>
+                        <option value="">Selecione um aluno</option>
+                            <?php
+                            require_once "config.php";
+
+                            // Supondo que $conn seja a conexão com o banco de dados
+                            $sql = "SELECT nome_completo, email FROM formulario";
+                            $result = $conn->query($sql);
+
+                            $alunos = array();
+
+                            while ($row = $result->fetch_assoc()) {
+                                $nomeAluno = $row['nome_completo'];
+                                $emailAluno = $row['email'];
+                                $alunos[$nomeAluno] = $emailAluno;
+                            }
+                        
+                            // Ordenar o array de nomes
+                            ksort($alunos);
+                        
+                            // Exibir os nomes na opção
+                            $contador = 1;
+                            foreach ($alunos as $nomeAluno => $emailAluno) {
+                                echo "<option value='$nomeAluno'>$contador. $nomeAluno</option>";
+                                $contador++;
+                            }
+                            ?>
+
+                            
+                    </select>
+                    
                     </div><!-- FIM Div nome do aluno-->
 
-                    <div class="email-one"><!--Div email do aluno-->
-                      <label for="email-one">E-mail:</label>
-                      <input type="email" id="mailum" />
-                    </div><!--fim Div email do aluno-->
+                    <div class="col-md-4 ">
+                    <label for="email">Email:</label>
+                    <p></p>
+                    <input type="email" name="email" id="email" class="form-control bg-light" readonly >
+                    <br><br>
+                    </div>
+
 
                     <div><!--Div info info-status -->
                         <label for="info-status">Status</label>
