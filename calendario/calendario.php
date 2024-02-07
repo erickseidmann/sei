@@ -42,70 +42,65 @@
                         <thead class="table-title">
                             <tr>
                                 <th scope="col">Horário</th>
-                                <th scope="col">Status</th>
                                 <th scope="col" class="segunda">Segunda-feira</th>
-                                <th scope="col">Horário</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Horário</th>                           
                                 <th scope="col" class="terca">Terça-feira</th>
-                                <th scope="col">Horário</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Horário</th>
                                 <th scope="col" class="quarta">Quarta-feira</th>
-                                <th scope="col">Horário</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Horário</th>
                                 <th scope="col" class="quinta">Quinta-feira</th>
-                                <th scope="col">Horário</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Horário</th>
                                 <th scope="col" class="sexta">Sexta-feira</th>
-                                <th scope="col">Horário</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Horário</th>
                                 <th scope="col" class="sabado">Sábado</th>
+                                <th scope="col">Status</th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Aqui você pode adicionar mais linhas para representar os horários -->
-                            <?php
-                            // Defina os horários de início e fim (6h às 22h) com intervalos de 30 minutos
-                            $horarios = array_map(function($hora) { return str_pad($hora, 2, "0", STR_PAD_LEFT); }, range(6, 21));
-                            $horarios[] = '22';
+    <?php
+    // Defina os horários de início e fim (6h às 22h) com intervalos de 30 minutos
+    $horarios = array_map(function($hora) { return str_pad($hora, 2, "0", STR_PAD_LEFT); }, range(6, 21));
+    $horarios[] = '22';
 
-                            foreach ($horarios as $hora) {
-                                // Loop para os 2 intervalos de 30 minutos
-                                for ($i = 0; $i < 2; $i++) {
-                                    $minutos = str_pad($i * 30, 2, "0", STR_PAD_LEFT);
-                                    $horaCompleta = "$hora:$minutos";
-                                    echo "<tr>";
-                                    echo "<td>$horaCompleta</td>";
-                                    echo "<td>Status</td>";
+    foreach ($horarios as $hora) {
+        // Loop para os 2 intervalos de 30 minutos
+        for ($i = 0; $i < 2; $i++) {
+            $minutos = str_pad($i * 30, 2, "0", STR_PAD_LEFT);
+            $horaCompleta = "$hora:$minutos";
+            echo "<tr>";
+            echo "<td>$horaCompleta</td>";
 
-                                    // Loop para os dias da semana
-                                    $diasSemana = ["segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
-                                    foreach ($diasSemana as $dia) {
-                                        echo "<td class='$dia'>";
-                                        echo "<select name='aluno'><option value=''>Selecione um aluno</option>";
-                                        require_once 'config.php';
-                                        $sql = 'SELECT nome_completo, email FROM formulario';
-                                        $result = $conn->query($sql);
-                                        $alunos = array();
-                                        while ($row = $result->fetch_assoc()) {
-                                            $nomeAluno = $row['nome_completo'];
-                                            $emailAluno = $row['email'];
-                                            $alunos[$nomeAluno] = $emailAluno;
-                                        }
-                                        ksort($alunos);
-                                        foreach ($alunos as $nomeAluno => $emailAluno) {
-                                            echo "<option value='$nomeAluno'>$nomeAluno</option>";
-                                        }
-                                        echo "</select>";
-                                        echo "</td>";
-                                        echo "<td>$horaCompleta</td>";
-                                        echo "<td>Status</td>";
-                                    }
+            // Loop para os dias da semana
+            $diasSemana = ["segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
+            foreach ($diasSemana as $dia) {
+                echo "<td class='$dia'>";
+                echo "<select name='aluno'><option value=''>Selecione um aluno</option>";
+                // Aqui você pode adicionar lógica para preencher o select de alunos
+                echo "</select>";
+                echo "</td>";
+                echo "<td>"; // Abertura da célula "Status"
+                echo "<select name='status'>";
+                echo "<option value='Confirmada'>Confirmada</option>";
+                echo "<option value='Reposição'>Reposição</option>";
+                echo "<option value='Cancelada'>Cancelada</option>";
+                echo "<option value='Alterou data'>Alterou data</option>";
+                echo "</select>";
+                echo "</td>"; // Fechamento da célula "Status"
+                echo "<td>$horaCompleta</td>";
+            }
 
-                                    echo "</tr>";
-                                }
-                            }
-                            ?>
-                        </tbody>
+            echo "</tr>";
+        }
+    }
+    ?>
+</tbody>
+
                         <!-- Adicione mais linhas conforme necessário -->
                     </table>
                 </div>
