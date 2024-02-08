@@ -30,5 +30,11 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    $("#showTableButton").click(function(){
+        $("#scheduleTable").toggle(); // Mostra ou oculta a tabela ao clicar no botão
+    });
+});
+
 
 
