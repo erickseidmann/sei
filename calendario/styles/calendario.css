@@ -83,25 +83,13 @@ nav a {
 	display: block;
 }
 
-#calendario {
-    width: 80%; /* Defina a largura desejada para a tabela */
-    margin: 0 auto; /* Centraliza a tabela na página */
-}
 
 /* Fixa a linha dos dias da semana e os horários */
-#calendario th,
-#calendario td:first-child {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    z-index: 2;
-}
 
-#calendario th:first-child,
-#calendario td:first-child {
-    left: 0;
-}
 
+
+
+/* Estilo para as células do cabeçalho da tabela */
 th.segunda {
     background-color: orange;
 }
@@ -130,18 +118,36 @@ th.sabado {
 .table-title {
     position: sticky;
     top: 0;
-    background-color: #ffffff; /* Defina a cor de fundo desejada */
+    font-size: 12px;
+    
+    background-color: #ffc787; /* Defina a cor de fundo desejada */
     z-index: 999; /* Certifique-se de que o cabeçalho da tabela esteja sempre na parte superior */
-    padding: 10px;
-    border-bottom: 1px solid #ccc; /* Adiciona uma borda inferior para separar o título do restante da tabela */
+    border-bottom: 1px solid #000000; /* Adiciona uma borda inferior para separar o título do restante da tabela */
 }
-/* Definir altura máxima e adicionar barra de rolagem vertical */
-.scrollable-table {
-    max-height: 400px; /* Altura máxima da área de rolagem */
-    overflow-y: auto; /* Adicionar barra de rolagem vertical quando necessário */
+
+/* Estilo para as células da tabela */
+table {
+    border-collapse: collapse; /* Para mesclar as bordas das células */
+    width: 100%; /* Define a largura da tabela */
 }
-/* Reduzir o tamanho das células da tabela */
-table td {
-    padding: 5px; /* Adicione algum espaço entre o conteúdo e a borda da célula */
-    font-size: 14px; /* Reduza o tamanho do texto dentro das células */
+
+table td, table th {
+    border: 1px solid #dddddd; /* Adiciona uma borda de 1px sólida com a cor cinza para as células */
+    padding: 8px; /* Adiciona um preenchimento interno de 8 pixels para as células */
+    text-align: left; /* Alinha o texto à esquerda nas células */
 }
+
+/* Estilo para as células do cabeçalho da tabela */
+table th {
+    background-color: #f2f2f2; /* Define uma cor de fundo cinza claro para as células do cabeçalho */
+}
+
+/* Estilo para as células alternadas da tabela */
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Define uma cor de fundo cinza claro para as linhas pares da tabela */
+}
+
+.confirmada { background-color: green; }
+.reposicao { background-color: lightblue; }
+.cancelada { background-color: red; }
+.alterouData { background-color: orange; }

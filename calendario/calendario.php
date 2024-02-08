@@ -59,49 +59,62 @@
                                 <th scope="col">Horário</th>
                                 <th scope="col" class="sabado">Sábado</th>
                                 <th scope="col">Status</th>
-
                             </tr>
                         </thead>
                         <tbody>
-    <?php
-    // Defina os horários de início e fim (6h às 22h) com intervalos de 30 minutos
-    $horarios = array_map(function($hora) { return str_pad($hora, 2, "0", STR_PAD_LEFT); }, range(6, 21));
-    $horarios[] = '22';
+                            <?php
+                            // Defina os horários de início e fim (6h às 22h) com intervalos de 30 minutos
+                            $horarios = array_map(function($hora) { return str_pad($hora, 2, "0", STR_PAD_LEFT); }, range(6, 21));
+                            $horarios[] = '22';
 
-    foreach ($horarios as $hora) {
-        // Loop para os 2 intervalos de 30 minutos
-        for ($i = 0; $i < 2; $i++) {
-            $minutos = str_pad($i * 30, 2, "0", STR_PAD_LEFT);
-            $horaCompleta = "$hora:$minutos";
-            echo "<tr>";
-            echo "<td>$horaCompleta</td>";
+                            foreach ($horarios as $hora) {
+                                // Loop para os 2 intervalos de 30 minutos
+                                for ($i = 0; $i < 2; $i++) {
+                                    $minutos = str_pad($i * 30, 2, "0", STR_PAD_LEFT);
+                                    $horaCompleta = "$hora:$minutos";
+                                    echo "<tr>";
+                                    echo "<td>$horaCompleta</td>";
 
-            // Loop para os dias da semana
-            $diasSemana = ["segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
-            foreach ($diasSemana as $dia) {
-                echo "<td class='$dia'>";
-                echo "<select name='aluno'><option value=''>Selecione um aluno</option>";
-                // Aqui você pode adicionar lógica para preencher o select de alunos
-                echo "</select>";
-                echo "</td>";
-                echo "<td>"; // Abertura da célula "Status"
-                echo "<select name='status'>";
-                echo "<option value='Confirmada'>Confirmada</option>";
-                echo "<option value='Reposição'>Reposição</option>";
-                echo "<option value='Cancelada'>Cancelada</option>";
-                echo "<option value='Alterou data'>Alterou data</option>";
-                echo "</select>";
-                echo "</td>"; // Fechamento da célula "Status"
-                echo "<td>$horaCompleta</td>";
-            }
+                                    // Loop para os dias da semana
+                                    $diasSemana = ["segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
+                                    foreach ($diasSemana as $dia) {
+                                        echo "<td class='$dia'>";
+                                        echo "<select name='aluno'><option value=''>Selecione um aluno</option>";
+                                        require_once 'config.php';
+                                        $sql = 'SELECT nome_completo, email FROM formulario';
+                                        $result = $conn->query($sql);
+                                        $alunos = array();
+                                        while ($row = $result->fetch_assoc()) {
+                                            $nomeAluno = $row['nome_completo'];
+                                            $emailAluno = $row['email'];
+                                            $alunos[$nomeAluno] = $emailAluno;
 
-            echo "</tr>";
-        }
-    }
-    ?>
-</tbody>
-
-                        <!-- Adicione mais linhas conforme necessário -->
+                                            
+                                        }
+                                        ksort($alunos);
+                                        $contador = 1;
+                                        foreach ($alunos as $nomeAluno => $emailAluno) {
+                                            echo "<option value='$nomeAluno'>$contador.$nomeAluno</option>";
+                                            $contador++;
+                                        }
+                                        echo "</select>";
+                                        echo "</td>";
+                                        echo "<td class='statusCell'>"; // Abertura da célula "Status"
+                                        echo "<select name='status'>";
+                                        echo "<option value='select'>select</option>";
+                                        echo "<option value='Confirmada'>Confirmada</option>";
+                                        echo "<option value='Reposição'>Reposição</option>";
+                                        echo "<option value='Cancelada'>Cancelada</option>";
+                                        echo "<option value='Alterou data'>Alterou data</option>";
+                                        echo "</select>";
+                                        echo "</td>"; // Fechamento da célula "Status"
+                                        echo "<td>$horaCompleta</td>";
+                                    }
+                                    echo "</tr>";
+                                }
+                            }
+                            ?>
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -111,10 +124,11 @@
     <!-- the start of the tag footer-->
     <footer>
     </footer>
-     <!-- the end of the tag footer-->
-     <script src="scripts/getDate.js"></script>  
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- the end of the tag footer-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/script.js"></script>
+    <script>
+
+    </script>
 </body>
 </html>
