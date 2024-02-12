@@ -30,9 +30,51 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $("#showTableButton").click(function(){
-        $("#scheduleTable").toggle(); // Mostra ou oculta a tabela ao clicar no botão
+$(document).ready(function() {
+    // Função para fechar todas as tabelas abertas quando o botão 'Close All' for clicado
+    $(".closeAllButton").click(function() {
+        $("main").hide();
+    });
+
+    // Função para fechar a tabela quando o botão 'x' for clicado
+    $(".closeTableButton").click(function() {
+        var targetId = $(this).data('target');
+        var scheduleTable = $("#scheduleTable_" + targetId);
+        var saveButtons = scheduleTable.find('.saveButton, .saveAllButton');
+        if (saveButtons.hasClass('saved')) {
+            scheduleTable.hide(); // Oculta a tabela correspondente se as alterações estiverem salvas
+        } else {
+            alert("Salve seu trabalho primeiro"); // Exibe a mensagem se as alterações não estiverem salvas
+        }
+    });
+
+    // Função para marcar as alterações como salvas quando o botão 'Save' for clicado
+    $(".saveButton").click(function() {
+        $(this).addClass('saved');
+        $(".closeAllButton").show(); // Mostra o botão 'Close All' quando o 'Save' é clicado
+    });
+
+    // Função para marcar todas as alterações como salvas quando o botão 'Save All' for clicado
+    $(".saveAllButton").click(function() {
+        $(".saveButton, .saveAllButton").addClass('saved');
+        $(".closeAllButton").show(); // Mostra o botão 'Close All' quando o 'Save All' é clicado
+    });
+});
+
+
+
+
+
+
+$(document).ready(function() {
+    $(".showAllButton").click(function() {
+        $("main").show(); // Mostra todas as tabelas
+    });
+
+    $(".showTableButton").click(function() {
+        var targetId = $(this).data('target');
+        $("main").hide(); // Esconde todas as tabelas
+        $("#scheduleTable_" + targetId).show(); // Mostra apenas a tabela do professor específico
     });
 });
 

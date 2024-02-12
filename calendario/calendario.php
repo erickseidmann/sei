@@ -32,112 +32,117 @@
             <li><a href="#">Books</a></li>
         </ul>  
     </nav>
+    <div class="button-container">
+        <button class="showAllButton">All</button>
+        <?php for ($j = 1; $j <= 20; $j++): ?>
+            <button class="showTableButton" data-target="<?php echo $j; ?>">Teacher <?php echo $j; ?></button>
+        <?php endfor; ?>
+    </div>
 
-    <button id="showTableButton">101</button><!-- Botão para mostrar a tabela --> 
-    <!--the start of the tag main-->
     <?php for ($j = 1; $j <= 20; $j++): ?>
-    <main id="scheduleTable_<?php echo $j; ?>" >
-        <h2>Teacher <?php echo $j; ?></h2>
-        <div style="overflow-x: auto;">
-            <div style="max-height: 400px; overflow-y: scroll;">
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead class="table-title">
-                            <tr>
-                                <th scope="col">Horário</th>
+        <main id="scheduleTable_<?php echo $j; ?>" style="display: none;">
+            <h2>Teacher <?php echo $j; ?>
+            <button class="closeTableButton" data-target="<?php echo $j; ?>">x</button> <!-- Botão 'x' para fechar a tabela -->
+            <button class="saveButton">Save</button> <!-- Botão 'Save' -->
+            <button class="saveAllButton">Save All</button> <!-- Botão 'Save All' -->
+            <button class="closeAllButton" style="display: none;">Close All</button> <!-- Botão 'Close All' -->
+        </h2>
+            <div style="overflow-x: auto;">
+                <div style="max-height: 400px; overflow-y: scroll;">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead class="table-title">
+                                <tr>
+                                    <th scope="col" class='horaCell'>Horário</th>
+                                    <?php
+                                        // Cabeçalhos das colunas
+                                        $diasSemana = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+                                        foreach ($diasSemana as $dia) {
+                                            echo "<th scope='col'>$dia</th>";
+                                            echo "<th scope='col'>Status</th>";
+                                            echo "<th scope='col'>APP</th>";
+                                            echo "<th scope='col'>Observações</th>";
+                                            echo "<th scope='col' class='horaCell'>Horário</th>"; // Adiciona a coluna de Horário
+                                        }
+                                    ?>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 <?php
-                                    // Crie um array com os nomes dos dias da semana
-                                    $diasSemana = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
                                     
-                                    // Repita as colunas para os outros dias da semana
-                                    foreach ($diasSemana as $dia) {
-                                        echo "<th scope='col'>$dia</th>";
-                                        echo "<th scope='col'>Status</th>";
-                                        echo "<th scope='col'>APP</th>";
-                                        echo "<th scope='col'>Observações</th>";
+                                    $horarios = array_map(function($hora) { return str_pad($hora, 2, "0", STR_PAD_LEFT); }, range(6, 21));
+                                    $horarios[] = '22';
+
+                                    foreach ($horarios as $hora) {
+                                        for ($i = 0; $i < 2; $i++) {
+                                            $minutos = str_pad($i * 30, 2, "0", STR_PAD_LEFT);
+                                            $horaCompleta = "$hora:$minutos";
+                                            
+                                            echo "<tr>";
+                                            echo "<td class='horaCell'>$horaCompleta</td>";
+
+                                            // Células para os dias da semana
+                                            $diasSemana = ["segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
+                                            foreach ($diasSemana as $dia) {
+                                                echo "<td class='$dia'>";
+                                                echo "<select name='aluno'><option value=''>Selecione um aluno</option>";
+                                                require_once 'config.php';
+                                                $sql = 'SELECT nome_completo, email FROM formulario';
+                                                $result = $conn->query($sql);
+                                                $alunos = array();
+                                                while ($row = $result->fetch_assoc()) {
+                                                    $nomeAluno = $row['nome_completo'];
+                                                    $emailAluno = $row['email'];
+                                                    $alunos[$nomeAluno] = $emailAluno;
+                                                }
+                                                ksort($alunos);
+                                                $contador = 1;
+                                                foreach ($alunos as $nomeAluno => $emailAluno) {
+                                                    echo "<option value='$nomeAluno'>$contador.$nomeAluno</option>";
+                                                    $contador++;
+                                                }
+                                                echo "</select>";
+                                                echo "</td>";
+                                                echo "<td class='statusCell'>"; 
+                                                echo "<select name='status'>";
+                                                echo "<option value='select'>select</option>";
+                                                echo "<option value='Confirmada'>Confirmada</option>";
+                                                echo "<option value='Reposição'>Reposição</option>";
+                                                echo "<option value='Cancelada'>Cancelada</option>";
+                                                echo "<option value='Alterou data'>Alterou data</option>";
+                                                echo "</select>";
+                                                echo "</td>"; 
+                                                echo "<td class='appCell'>"; 
+                                                echo "<select name='app'>";
+                                                echo "<option value='select'>select</option>";
+                                                echo "<option value='Skype'>Skype</option>";
+                                                echo "<option value='Googlemeet'>Google Meet</option>";
+                                                echo "<option value='Zoom'>Zoom</option>";
+                                                echo "<option value='WhatsApp'>WhatsApp</option>";
+                                                echo "</select>";
+                                                echo "</td>"; 
+                                                echo "<td class='observationsCell'>";
+                                                echo "<textarea name='observations' rows='3' maxlength='500'></textarea>";
+                                                echo "</td>"; 
+                                                echo "<td class='horaCell'>$horaCompleta</td>"; // Coluna de Horário
+                                            }
+                                            echo "</tr>";
+                                        }
                                     }
                                 ?>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                // Seu código PHP para gerar as linhas da tabela aqui
-                                $horarios = array_map(function($hora) { return str_pad($hora, 2, "0", STR_PAD_LEFT); }, range(6, 21));
-                                $horarios[] = '22';
-
-                                foreach ($horarios as $hora) {
-                                    // Loop para os 2 intervalos de 30 minutos
-                                    for ($i = 0; $i < 2; $i++) {
-                                        $minutos = str_pad($i * 30, 2, "0", STR_PAD_LEFT);
-                                        $horaCompleta = "$hora:$minutos";
-                                        echo "<tr>";
-                                        echo "<td>$horaCompleta</td>";
-                                    
-                                        // Loop para os dias da semana
-                                        $diasSemana = ["segunda", "terca", "quarta", "quinta", "sexta", "sabado"];
-                                        foreach ($diasSemana as $dia) {
-                                            echo "<td class='$dia'>";
-                                            echo "<select name='aluno'><option value=''>Selecione um aluno</option>";
-                                            require_once 'config.php';
-                                            $sql = 'SELECT nome_completo, email FROM formulario';
-                                            $result = $conn->query($sql);
-                                            $alunos = array();
-                                            while ($row = $result->fetch_assoc()) {
-                                                $nomeAluno = $row['nome_completo'];
-                                                $emailAluno = $row['email'];
-                                                $alunos[$nomeAluno] = $emailAluno;
-                                            }
-                                            ksort($alunos);
-                                            $contador = 1;
-                                            foreach ($alunos as $nomeAluno => $emailAluno) {
-                                                echo "<option value='$nomeAluno'>$contador.$nomeAluno</option>";
-                                                $contador++;
-                                            }
-                                            echo "</select>";
-                                            echo "</td>";
-                                            echo "<td class='statusCell'>"; // Abertura da célula "Status"
-                                            echo "<select name='status'>";
-                                            echo "<option value='select'>select</option>";
-                                            echo "<option value='Confirmada'>Confirmada</option>";
-                                            echo "<option value='Reposição'>Reposição</option>";
-                                            echo "<option value='Cancelada'>Cancelada</option>";
-                                            echo "<option value='Alterou data'>Alterou data</option>";
-                                            echo "</select>";
-                                            echo "</td>"; // Fechamento da célula "Status"
-                                            echo "<td class='appCell'>"; // Abertura da célula "APP"
-                                            echo "<select name='app'>";
-                                            echo "<option value='select'>select</option>";
-                                            echo "<option value='Skype'>Skype</option>";
-                                            echo "<option value='Googlemeet'>Google Meet</option>";
-                                            echo "<option value='Zoom'>Zoom</option>";
-                                            echo "<option value='WhatsApp'>WhatsApp</option>";
-                                            echo "</select>";
-                                            echo "</td>"; // Fechamento da célula "APP"
-                                            echo "<td class='observationsCell'>"; // Abertura da célula "Observações"
-                                            echo "<textarea name='observations' rows='3' maxlength='500'></textarea>";
-                                            echo "</td>"; // Fechamento da célula "Observações"
-                                            echo "<td>$horaCompleta</td>";
-                                        }
-                                        echo "</tr>";
-                                    }
-                                }
-                            ?>
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
-<?php endfor; ?>  
-    <!--the end of the tag main-->
+        </main>
+    <?php endfor; ?>  
+
     <!-- the start of the tag footer-->
     <footer>
     </footer>
     <!-- the end of the tag footer-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/script.js"></script>
-    <script>
-
-    </script>
 </body>
 </html>
