@@ -34,10 +34,13 @@
     </nav>
     <div class="button-container">
         <button class="showAllButton">All</button>
+        
         <?php for ($j = 1; $j <= 20; $j++): ?>
             <button class="showTableButton" data-target="<?php echo $j; ?>">Teacher <?php echo $j; ?></button>
         <?php endfor; ?>
     </div>
+
+
 
     <?php for ($j = 1; $j <= 20; $j++): ?>
         <main id="scheduleTable_<?php echo $j; ?>" style="display: none;">

@@ -67,9 +67,6 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    $(".showAllButton").click(function() {
-        $("main").show(); // Mostra todas as tabelas
-    });
 
     $(".showTableButton").click(function() {
         var targetId = $(this).data('target');
@@ -78,5 +75,47 @@ $(document).ready(function() {
     });
 });
 
+
+
+$(document).ready(function() {
+    // Variável para controlar se a senha foi inserida corretamente
+    var senhaCorreta = false;
+
+    // Função para exibir o modal quando o botão "All" for clicado
+    $(".showAllButton").click(function() {
+        // Verifica se a senha foi inserida corretamente
+        if (!senhaCorreta) {
+            // Pede a senha ao usuário
+            var password = prompt("Por favor, insira a senha:");
+
+            // Verifica se a senha está correta
+            if (password === "sua_senha_aqui") { // Substitua "sua_senha_aqui" pela senha correta
+                // Define que a senha foi inserida corretamente
+                senhaCorreta = true;
+
+                // Mostra todas as tabelas dos professores
+                $("main").show();
+            } else {
+                // Exibe uma mensagem de senha incorreta
+                alert("Senha incorreta. Tente novamente.");
+            }
+        } else {
+            // Mostra todas as tabelas dos professores se a senha já foi inserida corretamente anteriormente
+            $("main").show();
+        }
+    });
+
+    // Função para fechar todas as tabelas quando o botão "Close All" for clicado
+    $(".closeAllButton").click(function() {
+        // Verifica se a senha foi inserida corretamente
+        if (senhaCorreta) {
+            // Fecha todas as tabelas dos professores
+            $("main").hide();
+        } else {
+            // Exibe uma mensagem solicitando que o usuário salve seu trabalho primeiro
+            alert("Por favor, salve seu trabalho primeiro.");
+        }
+    });
+});
 
 
