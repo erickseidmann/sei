@@ -151,6 +151,7 @@ table tr:nth-child(even) {
 .reposicao { background-color: lightblue; }
 .cancelada { background-color: red; }
 .alterouData { background-color: orange; }
+.aulaExtra { background-color: rgb(0, 204, 255); }
 
 .button-container {
     
@@ -174,4 +175,10 @@ table tr:nth-child(even) {
 
 .horaCell {
     background-color: orange;
+}
+
+.message {
+    display: none;
+    color: red;
+    margin-top: 10px;
 }

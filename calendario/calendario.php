@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +33,9 @@
             <li><a href="#">Books</a></li>
         </ul>  
     </nav>
+
+    
+
     <div class="button-container">
         <button class="showAllButton">All</button>
         
@@ -40,10 +44,10 @@
         <?php endfor; ?>
     </div>
 
-
+ 
 
     <?php for ($j = 1; $j <= 20; $j++): ?>
-        <main id="scheduleTable_<?php echo $j; ?>" style="display: none;">
+        <main id="scheduleTable_<?php echo $j; ?>" class="schedule-table" style="display: none;">
             <h2>Teacher <?php echo $j; ?>
             <button class="closeTableButton" data-target="<?php echo $j; ?>">x</button> <!-- Botão 'x' para fechar a tabela -->
             <button class="saveButton">Save</button> <!-- Botão 'Save' -->
@@ -113,6 +117,7 @@
                                                 echo "<option value='Reposição'>Reposição</option>";
                                                 echo "<option value='Cancelada'>Cancelada</option>";
                                                 echo "<option value='Alterou data'>Alterou data</option>";
+                                                echo "<option value='Aula extra'>Aula Extra</option>";
                                                 echo "</select>";
                                                 echo "</td>"; 
                                                 echo "<td class='appCell'>"; 
@@ -147,5 +152,7 @@
     <!-- the end of the tag footer-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/script.js"></script>
+
+
 </body>
 </html>

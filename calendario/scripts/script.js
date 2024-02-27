@@ -26,6 +26,8 @@ $(document).ready(function(){
             statusCell.addClass('cancelada');
         } else if(selectedStatus === 'Alterou data') {
             statusCell.addClass('alterouData');
+        } else if(selectedStatus === 'Aula extra') {
+            statusCell.addClass('aulaExtra');
         }
     });
 });
@@ -89,7 +91,7 @@ $(document).ready(function() {
             var password = prompt("Por favor, insira a senha:");
 
             // Verifica se a senha está correta
-            if (password === "sua_senha_aqui") { // Substitua "sua_senha_aqui" pela senha correta
+            if (password === "123") { // Substitua "sua_senha_aqui" pela senha correta
                 // Define que a senha foi inserida corretamente
                 senhaCorreta = true;
 
@@ -119,3 +121,4 @@ $(document).ready(function() {
 });
 
 
+///https://play.kahoot.it/v2/?quizId=01610320-5e16-404a-a0ca-188d8268cb8c&hostId=cf5f2211-7275-4645-81da-dfee5b9e51e0
