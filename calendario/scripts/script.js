@@ -121,4 +121,34 @@ $(document).ready(function() {
 });
 
 
-///https://play.kahoot.it/v2/?quizId=01610320-5e16-404a-a0ca-188d8268cb8c&hostId=cf5f2211-7275-4645-81da-dfee5b9e51e0
+$(document).ready(function() {
+    // Variável para controlar se a senha foi inserida corretamente
+    var senhaCorreta = false;
+
+    // Função para exibir o modal quando os botões protegidos forem clicados
+    $(".protectedButton").click(function() {
+        // Verifica se a senha foi inserida corretamente
+        if (!senhaCorreta) {
+            // Pede a senha ao usuário
+            var password = prompt("Por favor, insira a senha:");
+
+            // Verifica se a senha está correta
+            if (password === "123") { // Substitua "sua_senha_aqui" pela senha correta
+                // Define que a senha foi inserida corretamente
+                senhaCorreta = true;
+
+                // Executa a ação associada ao botão protegido
+                $(this).trigger('click');
+            } else {
+                // Exibe uma mensagem de senha incorreta
+                alert("Senha incorreta. Tente novamente.");
+            }
+        } else {
+            // Executa a ação associada ao botão protegido se a senha já foi inserida corretamente anteriormente
+            $(this).trigger('click');
+        }
+    });
+
+    // Restante do seu código...
+});
+

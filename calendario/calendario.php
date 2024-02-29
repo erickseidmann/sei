@@ -40,7 +40,7 @@
         <button class="showAllButton">All</button>
         
         <?php for ($j = 1; $j <= 20; $j++): ?>
-            <button class="showTableButton" data-target="<?php echo $j; ?>">Teacher <?php echo $j; ?></button>
+            <button class="showTableButton " data-target="<?php echo $j; ?>">Teacher <?php echo $j; ?></button>
         <?php endfor; ?>
     </div>
 
@@ -50,8 +50,8 @@
         <main id="scheduleTable_<?php echo $j; ?>" class="schedule-table" style="display: none;">
             <h2>Teacher <?php echo $j; ?>
             <button class="closeTableButton" data-target="<?php echo $j; ?>">x</button> <!-- Botão 'x' para fechar a tabela -->
-            <button class="saveButton">Save</button> <!-- Botão 'Save' -->
-            <button class="saveAllButton">Save All</button> <!-- Botão 'Save All' -->
+            <button class="saveButton protectedButton">Save</button> <!-- Botão 'Save' -->
+            <button class="saveAllButton protectedButton">Save All</button> <!-- Botão 'Save All' -->
             <button class="closeAllButton" style="display: none;">Close All</button> <!-- Botão 'Close All' -->
         </h2>
             <div style="overflow-x: auto;">
@@ -152,6 +152,7 @@
     <!-- the end of the tag footer-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/script.js"></script>
+    
 
 
 </body>
