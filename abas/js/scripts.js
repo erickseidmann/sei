@@ -34,7 +34,7 @@ $(document).ready(function() {
     var novaDataArmazenada = localStorage.getItem('novaData');
     if (novaDataArmazenada) {
         var titulo1 = document.getElementById('titulo1');
-        titulo1.textContent = "Título - " + novaDataArmazenada;
+        titulo1.textContent = "Data de ref - " + novaDataArmazenada;
     }
 });
 
@@ -110,3 +110,23 @@ $(document).ready(function() {
 
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Adicione um evento de clique para os botões do professor
+    document.querySelectorAll('.openIframeButton').forEach(button => {
+        button.addEventListener('click', function() {
+            // Recupere a senha e o link associados a este professor
+            const teacherDiv = this.parentNode;
+            const password = teacherDiv.dataset.password;
+            const link = teacherDiv.dataset.link;
+
+            // Verifique a senha ou faça qualquer ação necessária
+            const enteredPassword = prompt('Por favor, insira a senha:');
+            if (enteredPassword === password) {
+                // Se a senha estiver correta, abra o link associado a este professor
+                window.open(link);
+            } else {
+                alert('Senha incorreta. Tente novamente.');
+            }
+        });
+    });
+});

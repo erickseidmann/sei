@@ -4,15 +4,15 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Criar pagina com abas</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">	
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
+
 	</head>
 	<body>
 		<div class="container theme-showcase" role="main">
 			<div class="page-header">
-				<h1>Pagina com Abas</h1>
+				<h1>Agendas de aulas</h1>
 			</div>
 			<div>
 
@@ -21,8 +21,8 @@
 				<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Controle Geral</a></li>
 				<li role="presentation"><a href="#week1" aria-controls="week1" role="tab" data-toggle="tab"  >WEEK 1</a></li>
 				<li role="presentation"><a href="#week2" aria-controls="week2" role="tab" data-toggle="tab">WEEK 2</a></li>
-				<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Configurações</a></li>
-				<li role="presentation"><a href="#detalhes" aria-controls="detalhes" role="tab" data-toggle="tab">Detalhes</a></li>
+				<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Ainda criando</a></li>
+				<li role="presentation"><a href="#detalhes" aria-controls="detalhes" role="tab" data-toggle="tab">Ainda criando</a></li>
 			  </ul>
 
 			  <!-- Tab panes -->
@@ -43,21 +43,108 @@
 
 
 
-
+<!--<button class="protectedButton" id="teste" >botão teste</button>-->
 				<div role="tabpanel" class="tab-pane" id="week1"><!-- inicio week 1-->
 						<h1> Week 1 </h1>
 
 						<h1 id="titulo1">Título Dinâmico</h1>
 						<div> 
-						<button  id="alterarBotao1" >Alterar Data</button>
+						<button  id="alterarBotao1" >Alterar Data</button>					
+						</div>
+						<p></p>
+						<div class="teacher-buttons">
+							<p></p>
+							<div class="teacher" data-password="123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=0&single=true">
+    							<button class="openIframeButton">Teacher 101</button>                                        
+							</div>
 
-						<button class="protectedButton" id="teste" >botão teste</button>
+
+							<p></p>
+							<div class="teacher" data-password="outraSenha456" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=351521329&single=true">
+   								 <button class="openIframeButton">Teacher 102</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1346479254&single=true">
+    							<button class="openIframeButton">Teacher 103</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1634769332&single=true">
+    							<button class="openIframeButton">Teacher 104</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1062914701&single=true">
+    							<button class="openIframeButton">Teacher 105</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=295519619&single=true">
+    							<button class="openIframeButton">Teacher 106</button>                                        
+							</div>
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1057910724&single=true">
+    							<button class="openIframeButton">Teacher 107</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=263567102&single=true">
+    							<button class="openIframeButton">Teacher 108</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1938761629&single=true">
+    							<button class="openIframeButton">Teacher 109</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1858507947&single=true">
+    							<button class="openIframeButton">Teacher 110</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=498867843&single=true">
+    							<button class="openIframeButton">Teacher 111</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1170149450&single=true">
+    							<button class="openIframeButton">Teacher 112</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1103003004&single=true">
+    							<button class="openIframeButton">Teacher 113</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="senha123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1103003004&single=true">
+    							<button class="openIframeButton">Teacher 114</button>                                        
+							</div>
+
+
+							<p></p>
+							<div class="teacher" data-password="123" data-link="https://docs.google.com/spreadsheets/d/e/2PACX-1vTxPv5G0SRApNwyNkylT5FSv_0daA4939HZfBC6KyXsaZu0YCm-ogj9UiblWPkitPz0K6AT4lCWOwMf/pubhtml?gid=1103003004&single=true">
+    							<button class="openIframeButton">Teacher 115</button>                                        
+							</div>
 						</div>
 
-						<b>
 
-						</b>
-						<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXD6wtVcHrPh1CeJ6aaHRvIg7VubvE3ZO2k67FJzk3ODFclPTfZoe8AsyIgpY1zrOLEgw7-KcVBqyh/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="800" height="800"></iframe>
+
+
 
 
 				</div><!-- fim week 1-->
